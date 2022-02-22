@@ -4,6 +4,7 @@ After=network.target
 
 [Service]
 AmbientCapabilities=CAP_NET_BIND_SERVICE
+# CapabilityBoundingSet=
 Environment="AUTOSSH_GATETIME=0"
 ExecStart=autossh -M 0 -o PubkeyAuthentication=yes -o PasswordAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=3 -NL 127.0.2.1:8006:localhost:8006 -i ~/.ssh/id_rsa idefix
 
